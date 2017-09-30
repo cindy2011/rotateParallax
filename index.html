@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>谁是综艺大咖</title>
+    <script src="http://download.shengli.com/web/setRem-750-100.js"></script>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <script src="http://wow.techbrood.com/libs/jquery/jquery-1.11.1.min.js"></script>
+    <div id="universe"></div>
+    <div class="page"  id="scene" data-friction-x="0.1"
+            data-friction-y="0.1"
+            data-scalar-x="25"
+            data-scalar-y="15">
+        <div class="title fadeInDown"></div>
+        <div class="ball1 ball layer" data-depth="0.5">
+            <div class="logo1"></div>
+        </div>
+        <div class="ball2 ball layer" data-depth="0.3">
+            <div class="logo2"></div>
+        </div>
+        <div class="ball3 ball layer" data-depth="0.1">
+            <div class="logo3"></div>
+        </div>
+        <div class="ball4 ball layer" data-depth="0.0">
+            <div class="logo4"></div>
+        </div>
+    </div>
+    <script src="js/three.r79.min.js"></script>
+    <script src="js/main2.js"></script>
+    <script src="http://download.shengli.com/cdntmpl/hyh54/js/parallax.js"></script>
+    <script>
+         $('#scene').parallax();
+    </script>
+</body>
+
+</html>

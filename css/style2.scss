@@ -1,0 +1,248 @@
+$img-src: "../img/";
+@function cRem($n) {
+    @return $n/100*1rem;
+}
+
+@mixin wandh($w, $h) {
+    width: cRem($w);
+    height: cRem($h);
+}
+
+@mixin bg($bg) {
+    background:url(#{$img-src}#{$bg}) center 0 no-repeat;
+    background-size: 100% auto;
+}
+
+@mixin whbg($w, $h, $bg) {
+    width: cRem($w);
+    height: cRem($h);
+    background:url(#{$img-src}#{$bg}) center 0 no-repeat;
+    background-size: 100% auto;
+}
+
+@mixin pos($l, $t) {
+    position: absolute;
+    left: cRem($l);
+    top: cRem($t);
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    background: #0c0604 url(../img/bg_loading.jpg) no-repeat center;
+    background-size: cover;
+}
+
+
+/*
+body {
+    background: linear-gradient(180deg, #373773, #235689, #2a9096, #364a7b, #4a367b, #5e3665, #2c294b, #31437a);
+    background-size: 1600% 1600%;
+    -webkit-animation: skygradient 180s ease infinite;
+    -moz-animation: skygradient 180s ease infinite;
+    -o-animation: skygradient 180s ease infinite;
+    animation: skygradient 180s ease infinite;
+}*/
+
+@-webkit-keyframes skygradient {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@-moz-keyframes skygradient {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@-o-keyframes skygradient {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@keyframes skygradient {
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+canvas {
+    width: 100%!important;
+    height: 100%!important;
+}
+
+#ball {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    perspective: 340px;
+}
+
+.title {
+    @include whbg(676, 324, 'title.png');
+    margin: cRem(67) auto;
+}
+
+.ball {
+    opacity: 0;
+}
+
+.ball1 {
+    @include whbg(303, 303, 'ball1.png');
+    @include pos(162, 370);
+    animation: fly 1s linear forwards, float ease-in-out 1.5s 1s infinite;
+    transform-style: preserve-3d;
+}
+
+.logo1 {
+    @include whbg(264, 151, 'logo1.png');
+    @include pos(12, 60);
+}
+
+.ball2 {
+    @include whbg(292, 292, 'ball2.png');
+    @include pos(440, 500);
+    animation: fly 1s 1s linear forwards, float ease-in-out 1.5s 2s infinite;
+    transform-style: preserve-3d;
+}
+
+.logo2 {
+    @include whbg(255, 128, 'logo2.png');
+    @include pos(20, 84);
+}
+
+.ball3 {
+    @include whbg(332, 332, 'ball3.png');
+    @include pos(45, 653);
+    animation: fly 1s 2s linear forwards, float ease-in-out 1.5s 3s infinite;
+    transform-style: preserve-3d;
+}
+
+.logo3 {
+    @include whbg(278, 147, 'logo3.png');
+    @include pos(30, 90);
+}
+
+.ball4 {
+    @include whbg(299, 299, 'ball4.png');
+    @include pos(416, 810);
+    animation: fly 1s 3s linear forwards, float ease-in-out 1.5s 4s infinite;
+    transform-style: preserve-3d;
+}
+
+.logo4 {
+    @include whbg(230, 143, 'logo4.png');
+    @include pos(40, 60);
+}
+
+.ball5 {
+    @include whbg(306, 304, 'ball5.png');
+    @include pos(150, 967);
+    animation: fly 1s 4s linear forwards, float ease-in-out 1.5s 5s infinite;
+    transform-style: preserve-3d;
+}
+
+.logo5 {
+    @include whbg(273, 192, 'logo5.png');
+    @include pos(20, 53);
+}
+
+@keyframes fly {
+    from {
+        transform: translateZ(-200px) scale(0.4);
+        opacity: 0;
+    }
+    to {
+        transform: translateZ(0px) scale(1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(0.1rem);
+        transform: translateY(0.1rem);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(0.1rem);
+        transform: translateY(0.1rem);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    animation: fadeInDown 1s 4s both;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0)
+    }
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
